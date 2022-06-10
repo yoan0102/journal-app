@@ -1,20 +1,25 @@
-
-
 export default {
-
-  name: 'auth',
-  component: () => import( /**webpackChunkName: "Auth Layout" */ "@/modules/auth/layouts/AuthLayout.vue"),
+  name: "auth",
+  component: () =>
+    import(
+      /**webpackChunkName: "Auth Layout" */ "@/modules/auth/layouts/AuthLayout.vue"
+    ),
   children: [
     {
-      path: '',
-      namne: 'login',
+      path: "",
+      name: "login",
       component: () =>
         import(
-      /**webpackChunkName: "LoginView" */ "@/modules/auth/views/LoginView.vue"
+          /**webpackChunkName: "LoginView" */ "@/modules/auth/views/LoginView.vue"
         ),
-    }
-  ]
-
-
-
+    },
+    {
+      path: "/register",
+      name: "register",
+      component: () =>
+        import(
+          /**webpackChunkName: "RegisterView" */ "@/modules/auth/views/RegisterView.vue"
+        ),
+    },
+  ],
 }
